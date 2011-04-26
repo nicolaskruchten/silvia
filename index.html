@@ -1,0 +1,56 @@
+<html>
+<head>
+	<title>Silvia</title>  
+	<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0;">
+	<link rel="apple-touch-icon" href="silvia.jpg"/>   
+	<style>
+		* { font-family: Verdana; }
+		td, th { text-align: center; }
+		button { width: 50px; height: 50px;}
+	</style>
+	<script src="jquery-1.5.2.min.js" type="text/javascript"></script>
+	<script language="javascript">
+		$(function() {
+			function showResult(data) {
+				$("#temp").html(data.temp);
+				$("#target").html(data.target);
+			}
+			$.getJSON("forward.php?x=/", showResult);
+			$("#reload").click(function() { $.getJSON("forward.php?x=/", showResult); });
+			$("#start").click(function() { $.getJSON("forward.php?x=/start", showResult); });
+			$("#stop").click(function() { $.getJSON("forward.php?x=/stop", showResult); });
+			$("#up").click(function() { $.getJSON("forward.php?x=/up", showResult); });
+			$("#down").click(function() { $.getJSON("forward.php?x=/down", showResult); });
+			$("#graph").click(function() { window.location = "graph.html"; });
+		});
+	</script>
+</head>
+<body style="width: 320px; margin: 0 auto; text-align:center;">
+
+<table style="width: 200px; margin: 0 auto;" cellpadding="5">
+<tr>
+<th>Temp</th>
+<th>Target</th>
+</tr>
+<tr>
+<td id="temp">??</td>
+<td id="target">??</td>
+</tr>
+<tr>
+<td colspan="2"><button id="reload" style="width: 100px">reload</button></td>
+</tr>
+<tr>
+<td><button id="start">start</button></td>
+<td><button id="up">up</button></td>
+</tr>
+<tr>
+<td><button id="stop">stop</button></td>
+<td><button id="down">down</button></td>
+</tr>
+<tr>
+<td colspan="2"><button id="graph" style="width: 100px">graph</button></td>
+</tr>
+</table>
+
+</body>
+</html>
