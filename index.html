@@ -2,7 +2,8 @@
 <head>
 	<title>Silvia</title>  
 	<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0;">
-	<link rel="apple-touch-icon" href="silvia.jpg"/>   
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <link rel="apple-touch-icon" href="silvia.jpg"/>   
 	<style>
 		* { font-family: Verdana; }
 		td, th { text-align: center; }
@@ -12,8 +13,8 @@
 	<script language="javascript">
 		$(function() {
 			function showResult(data) {
-				$("#temp").html(data.temp);
-				$("#target").html(data.target);
+				$("#temp").html("&nbsp;"+ data.temp + "&deg;");
+				$("#target").html("&nbsp;"+ data.target + "&deg;");
 			}
 			$.getJSON("forward.php?x=/", showResult);
 			$("#reload").click(function() { $.getJSON("forward.php?x=/", showResult); });
@@ -26,6 +27,8 @@
 	</script>
 </head>
 <body style="width: 320px; margin: 0 auto; text-align:center;">
+
+    <img src="silvia.jpg" style="height: 100px; width:100px; margin: 10px;"/>
 
 <table style="width: 200px; margin: 0 auto;" cellpadding="5">
 <tr>
@@ -41,11 +44,11 @@
 </tr>
 <tr>
 <td><button id="start">start</button></td>
-<td><button id="up">up</button></td>
+<td><button id="up" style="font-size: 18px;">&uarr;</button></td>
 </tr>
 <tr>
 <td><button id="stop">stop</button></td>
-<td><button id="down">down</button></td>
+<td><button id="down" style="font-size: 18px;">&darr;</button></td>
 </tr>
 <tr>
 <td colspan="2"><button id="graph" style="width: 100px">graph</button></td>
