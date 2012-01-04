@@ -21,7 +21,7 @@
       
       
       function updateGraphs() {
-	      $.getJSON("forward.php?x=/", function(data){ 
+	      $.getJSON("http://10.0.1.205/", function(data){ 
       			setTimeout(updateGraphs, 500); 
 		      fastLine.append(new Date().getTime(), data.temp); 
 		      slowLine.append(new Date().getTime(), data.temp); 

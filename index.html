@@ -1,7 +1,8 @@
-<html>
+<!DOCTYPE html>
+<html manifest="silvia.appcache">
 <head>
 	<title>Silvia</title>  
-	<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0;">
+	<meta name="viewport" content="initial-scale=1 maximum-scale=1">
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <link rel="apple-touch-icon" href="silvia.jpg"/>   
 	<style>
@@ -16,12 +17,12 @@
 				$("#temp").html("&nbsp;"+ data.temp + "&deg;");
 				$("#target").html("&nbsp;"+ data.target + "&deg;");
 			}
-			$.getJSON("forward.php?x=/", showResult);
-			$("#reload").click(function() { $.getJSON("forward.php?x=/", showResult); });
-			$("#start").click(function() { $.getJSON("forward.php?x=/start", showResult); });
-			$("#stop").click(function() { $.getJSON("forward.php?x=/stop", showResult); });
-			$("#up").click(function() { $.getJSON("forward.php?x=/up", showResult); });
-			$("#down").click(function() { $.getJSON("forward.php?x=/down", showResult); });
+			$.getJSON("http://10.0.1.205/", showResult);
+			$("#reload").click(function() { $.getJSON("http://10.0.1.205/", showResult); });
+			$("#start").click(function() { $.getJSON("http://10.0.1.205/start", showResult); });
+			$("#stop").click(function() { $.getJSON("http://10.0.1.205/stop", showResult); });
+			$("#up").click(function() { $.getJSON("http://10.0.1.205/up", showResult); });
+			$("#down").click(function() { $.getJSON("http://10.0.1.205/down", showResult); });
 			$("#graph").click(function() { window.location = "graph.html"; });
 		});
 	</script>
